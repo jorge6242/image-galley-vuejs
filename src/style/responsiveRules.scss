@@ -1,0 +1,19 @@
+@mixin phone($phone,$type,$orientation) {
+    @if $phone == 'default' and $type == 'default' {
+        @if $orientation == "portrait" {
+            @media only screen and (max-width: 768px) {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin tablet($phone,$type,$orientation) {
+    @if $phone == 'default' and $type == 'default' {
+        @if $orientation == "portrait" {
+            @media only screen and (min-width: 768px) and (max-width: 1023px) {
+                @content;
+            }
+        }
+    }
+}
