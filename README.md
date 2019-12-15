@@ -1,4 +1,4 @@
-# vuejs1
+# Image Gallery with VueJS
 
 ## Project setup
 ```
