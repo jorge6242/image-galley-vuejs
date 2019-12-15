@@ -50,6 +50,7 @@ export default {
 </script>
 
 <style lang="scss" scope>
+@import "../../style/colors.scss";
 @import "../../style/responsiveRules.scss";
 
 .pagination {
@@ -58,7 +59,7 @@ export default {
   .pagination__search {
     input {
       padding: 10px;
-      border: 1px solid #777;
+      border: 1px solid $dark-blue;
       border-radius: 50px;
     }
     input:focus {
@@ -67,16 +68,16 @@ export default {
   }
   .pagination__page {
     span {
-      background: #777;
+      background: $dark-blue;
       padding: 10px;
       border-radius: 50px;
-      color: white;
+      color: $default-white;
       font-size: 15px;
     }
     select {
-      background: #777;
-      border: 1px white solid;
-      color: white;
+      background: $dark-blue;
+      border: 1px $default-white solid;
+      color: $default-white;
       padding: 10px;
       font-size: 15px;
       border-radius: 50px;
@@ -87,9 +88,9 @@ export default {
   }
   .pagination__button {
     button {
-      background: #777;
-      color: white;
-      border: 1px white solid;
+      background: $dark-blue;
+      color: $default-white;
+      border: 1px $default-white solid;
       border-radius: 50px;
       font-size: 20px;
       padding: 10px;

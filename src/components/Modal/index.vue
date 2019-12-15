@@ -1,14 +1,3 @@
-<script>
-export default {
-  name: "modal",
-  methods: {
-    close() {
-      this.$emit("close");
-    }
-  }
-};
-</script>
-
 <template>
   <div class="modal-main">
     <div class="modal-main__backdrop">
@@ -23,6 +12,17 @@ export default {
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  name: "modal",
+  methods: {
+    close() {
+      this.$emit("close");
+    }
+  }
+};
+</script>
 
 <style lang="scss" scope>
 .modal-main {

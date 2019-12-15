@@ -35,6 +35,10 @@ import GalleryItem from "../components/GalleryItem";
 import Pagination from "../components/Pagination";
 import Modal from "../components/Modal";
 
+/**
+ * Image Gallery Container
+ */
+
 export default {
   name: "app",
   components: {
@@ -56,6 +60,11 @@ export default {
     closeModal() {
       this.isModalVisible = false;
     },
+    /**
+     * Search by Author
+     *
+     * @param {SyntheticEvent} event The react `SyntheticEvent`
+     */
     handleSearch(event) {
       const { page, limit } = this;
       const term = event.target.value;
@@ -69,11 +78,24 @@ export default {
       const { page, limit } = this;
       if (page < 100) this.getImages({ page: page + 1, limit });
     },
+    /**
+     * Change the limit per page in the pagination
+     *
+     * @param {SyntheticEvent} event The react `SyntheticEvent`
+     */
     onChangeLimit(event) {
       const { page } = this;
       const limit = event.target.value;
       this.getImages({ page, limit });
     },
+    /**
+     * Public api to get the image list
+     *
+     * @param {number} page Page number
+     * @param {number} limit Number of images to show
+     * @param {boolean} isSearch Validation to get the images by filter
+     * @param {string} term Name to filter the images by author
+     */
     async fetchData({ page, limit, isSearch = false, term }) {
       this.loading = true;
       try {
@@ -95,6 +117,14 @@ export default {
         this.loading = false;
       }
     },
+    /**
+     * Method to debounce the API in order to reduce number of server requests.
+     *
+     * @param {number} page Page number
+     * @param {number} limit Number of images to show
+     * @param {boolean} isSearch Validation to get the images by filter
+     * @param {string} term Name to filter the images by author
+     */
     getImages: _.debounce(function({ page, limit, isSearch, term }) {
       this.fetchData({ page, limit, isSearch, term });
     }, 500),

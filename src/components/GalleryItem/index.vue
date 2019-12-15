@@ -29,6 +29,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../style/colors.scss";
 @import "../../style/responsiveRules.scss";
 
 .gallery-item {
@@ -37,7 +38,7 @@ export default {
     display: flex;
     justify-content: space-around;
     .gallery-item__author {
-      color: black;
+      color: $dark-blue;
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
