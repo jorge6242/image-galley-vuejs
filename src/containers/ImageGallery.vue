@@ -14,10 +14,10 @@
     </div>
     <Pagination
       :page="page"
-      :handlePrevious="handlePrevious"
-      :onChangeLimit="onChangeLimit"
-      :handleNext="handleNext"
-      :handleSearch="handleSearch"
+      @handlePrevious="handlePrevious"
+      @onChangeLimit="onChangeLimit"
+      @handleNext="handleNext"
+      @handleSearch="handleSearch"
     />
     <div v-if="loading">Loading ...</div>
     <div class="image-gallery__list" v-else>

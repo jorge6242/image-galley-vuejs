@@ -32,18 +32,20 @@ export default {
   props: {
     page: {
       type: Number
+    }
+  },
+  methods: {
+    onChangeLimit() {
+      this.$emit("onChangeLimit");
     },
-    handlePrevious: {
-      type: Function
+    handlePrevious() {
+      this.$emit("handlePrevious");
     },
-    onChangeLimit: {
-      type: Function
+    handleNext() {
+      this.$emit("handleNext");
     },
-    handleNext: {
-      type: Function
-    },
-    handleSearch: {
-      type: Function
+    handleSearch() {
+      this.$emit("handleSearch");
     }
   }
 };
